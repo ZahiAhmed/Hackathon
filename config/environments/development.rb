@@ -17,6 +17,12 @@ Rails.application.configure do
   # Enable server timing
   config.server_timing = true
 
+  # Stripe Configuration
+  config.stripe = {
+    publishable_key: 'pk_test_51OcwtnKAv9z4Bbo4SUfmVzqCm11341KdC6Lz4Rbq0z9UTGOkia1qqVNRDmh4uAbxhlqB0I36AZOnklZLEvCY0zr100CgfIeG6a',
+    secret_key: 'sk_test_51OcwtnKAv9z4Bbo4YsFU6mmwIv5a3u5rRV06Lje5CZgEVF6JWC2NH5gcYlwFOJJpJVRa6PmzMegq6eQ3no8FHJXC00P4lc14lw'
+  }
+
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
   if Rails.root.join("tmp/caching-dev.txt").exist?
