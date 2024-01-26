@@ -2,9 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
+import { Elements } from '@stripe/react-stripe-js';
 import './index.css';
 import App from './App';
 import configureStore from './store';
+import stripePromise from './services/stripe';
 
 const store = configureStore();
 
@@ -16,7 +18,9 @@ function Root() {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <App />
+        <Elements stripe={stripePromise}>
+          <App />
+        </Elements>
       </BrowserRouter>
     </Provider>
   );
