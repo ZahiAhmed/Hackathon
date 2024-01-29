@@ -1,0 +1,206 @@
+p,a, h2, h3{
+    animation: fade 3s linear both;
+    animation-timeline: view();
+    animation-range: entry 70% cover 30%;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+        /* Initial position, adjust as needed */
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.home-container{
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+img{
+    max-width: 100%;
+    width: 100%;
+    max-height: 100vh;
+    display: block;
+    margin: 0 auto;
+}
+
+.home-container-description{
+    max-width: 50%;
+    position: absolute;
+    letter-spacing: 2px;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    z-index: 1;
+}
+
+.home-container-description  h1{
+    font-size: 3.5em;
+    text-shadow: 4px 4px 8px rgba(4,78,23, 1);
+    margin-bottom: 40px;
+    font-weight: 900;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+
+    @media screen and (max-width: 1725px) {
+        font-size: 2.7em;
+    }
+    
+    @media screen and (max-width: 1325px) {
+                font-size: 2.3em;
+    }
+        
+    @media screen and (max-width: 1170px) {
+        font-size: 2.0em;
+    }
+        
+    @media screen and (max-width: 1070px) {
+                font-size: 1.8em;
+    }
+        
+    @media screen and (max-width: 930px) {
+        font-size: 1.5em;        }
+        
+    @media screen and (max-width: 840px) {
+        font-size: 1.3em;
+    }
+}
+
+.home-container-description-button{
+    font-size: 1.2em;
+    display: inline-block;
+    padding: 13px 20px;
+    background-color: rgb(4, 78, 23);
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    font-style: italic;
+    /* transition: color 0.5s ease; */
+}
+
+.home-container-description-button:hover{
+    /* background-color: rgb(4, 154, 42); */
+    text-decoration: underline;
+}
+
+.text-body-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding:  60px 0 60px 0;
+}
+
+.text-body-1-div{
+    max-width: 51%;
+
+}
+
+.text-body-1-p  {
+    font-size: 23px;
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    line-height: 1.5;
+    padding: 0 0 24px 0;
+}
+
+.text-body-1-a {
+    position: relative;
+    text-decoration: none;
+    font-size: 23px;
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    padding-bottom: 5px;
+}
+
+
+.text-body-1-a::after {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 0;
+    background-color: rgb(4, 78, 23);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.text-body-1-a:hover::after {
+    width: 90%;
+}
+
+.text-body-1-a:visited{
+    color: black;
+}
+
+.stat-container{
+    text-align: center;
+    background-color: #fff9ed;
+    padding: 54px 0 54px 0;
+}
+
+.stat-container-header{
+    font-size: 44px;
+    font-weight: 900;
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    font-style: italic;
+    padding-bottom: 60px;
+}
+
+
+
+.stat-containers {
+    max-width: 55%;
+    /* Adjust the maximum width for stat-container-1 as needed */
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 55px;
+}
+
+.stat-containers>div {
+    text-align: center;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.number{
+    font-size: 70px;
+    font-weight: 400;
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+}
+
+.year{
+    margin: 25px 0;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    color: rgb(4, 78, 23);
+}
+
+.video-container{
+    background-color: rgb(4, 51, 16);
+    display: flex;
+    justify-content: center;
+    padding: 50px 50px;
+}
+
+
+.newsletter-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 50px;
+}

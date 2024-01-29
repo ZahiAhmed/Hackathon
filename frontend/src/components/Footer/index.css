@@ -1,0 +1,12 @@
+.container {
+    background-color: #fff9ed;
+    padding: 50px 50px;
+    margin-bottom: 500px;
+}
+
+.row-1{
+    max-width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+}
