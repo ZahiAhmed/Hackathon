@@ -17,8 +17,8 @@ const Footer = () => {
     };
 
     return(
-        <div className={`footer-container ${isDark ? 'dark-mode' : 'light-mode'}`}>
-            <div className={`container ${isDark ? 'dark-mode' : 'light-mode'}`}>
+        <div className="footer-container">
+            <div className="container">
                 <div className='row-1'>
                     <div >
                         <h2 className='stat-container-header'>JOIN OUR COMMUNITY!</h2>

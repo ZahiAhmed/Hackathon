@@ -5,23 +5,27 @@
     justify-content: space-evenly;
 }
 
+.light-mode.container {
+    background-color: #fff9ed;
+    color: var(--color-foreground);
+    padding: 50px 50px;
+    margin-bottom: 500px;
+}
 
-.container {
-    /* background-color: #fff9ed; */
+.light-mode.footer-container {
+    background-color: #fff9ed;
+    color: var(--color-foreground);
+}
+
+.dark-mode.container {
+    background-color: #EBC155;
+    color: var(--color-foreground);
     padding: 50px 50px;
     margin-bottom: 500px;
 }
 
 
-.dark-mode .container,
-.dark-mode .footer-container,
-.suscribe-button {
-    background-color: var(--color-background);
+.dark-mode.footer-container {
+    background-color: #EBC155;
     color: var(--color-foreground);
-}
-
-
-.light-mode .container,
-.light-mode .footer-container {
-    background-color: #fff9ed;
 }

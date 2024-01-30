@@ -1,10 +1,10 @@
-:root {
+/* :root {
     --color-background: #fafafa;
     --color-foreground: #1f2023;
 
     --image-grayscale: 0;
     --image-opacity: 100%;
-}
+} */
 
 body.dark {
     --color-background: #1f2023;
