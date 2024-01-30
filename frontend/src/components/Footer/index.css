@@ -9,7 +9,7 @@
     background-color: #fff9ed;
     /* color: var(--color-foreground); */
     padding: 50px 50px;
-    margin-bottom: 500px;
+    margin-bottom: 50px;
 }
 
 
@@ -17,7 +17,7 @@
     background-color: #c08230;
     color: var(--color-foreground);
     padding: 50px 50px;
-    margin-bottom: 500px;
+    margin-bottom: 50px;
 }
 
 .dark .suscribe-button {
