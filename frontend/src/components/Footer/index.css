@@ -1,12 +1,27 @@
-.container {
-    background-color: #fff9ed;
-    padding: 50px 50px;
-    margin-bottom: 500px;
-}
-
 .row-1{
     max-width: 80%;
     margin: auto;
     display: flex;
     justify-content: space-evenly;
+}
+
+
+.container {
+    /* background-color: #fff9ed; */
+    padding: 50px 50px;
+    margin-bottom: 500px;
+}
+
+
+.dark-mode .container,
+.dark-mode .footer-container,
+.suscribe-button {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+}
+
+
+.light-mode .container,
+.light-mode .footer-container {
+    background-color: #fff9ed;
 }
