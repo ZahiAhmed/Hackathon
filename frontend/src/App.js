@@ -7,14 +7,13 @@ import DarkModeToggle from "./components/DarkModeToggle";
 function App() {
   return (
     <>
-    <DarkModeToggle />
     <Switch>
       <Redirect exact from="/" to="/home" />
       <Route exact path="/home" component={HomePage} />
       {/* Add other routes as needed */}
     </Switch>
-
     <Footer></Footer>
+    <DarkModeToggle />
     </>
 
   );
