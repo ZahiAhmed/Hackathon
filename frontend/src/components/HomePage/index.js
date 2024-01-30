@@ -21,7 +21,7 @@ const HomePage = () => {
   };
 
   return (
-    <>
+    <div className="whole-page">
     <div className="home-container">
       <Slider {...carouselSettings}>
         {carouselImages.map((image, index) => (
@@ -51,7 +51,7 @@ const HomePage = () => {
             </p>
             <p className="text-body-1-p">Women are powerful agents of change.</p>
 
-            <a className= "text-body-1-a"href="#">HOW WE DO IT {`>`}</a>
+            <a className= "text-body-1-a" href="#">HOW WE DO IT {`>`}</a>
         </div>
     </div>
 
@@ -102,7 +102,7 @@ const HomePage = () => {
         <h2 className="stat-container-header">STAY CONNECTED!</h2>
         <a className="text-body-1-a ">JOIN OUR NEWSLETTER {`>`}</a>
     </div>
-    </>
+    </div>
   );
 };
 

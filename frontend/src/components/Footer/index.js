@@ -1,7 +1,12 @@
 import './index.css'
 import Icon from '../../svg/icon.js'
 import { useState } from 'react';
+import { useColorScheme } from '../DarkModeToggle/useColorScheme.js';
+
 const Footer = () => {
+    const { isDark } = useColorScheme(); // Get the current color scheme
+
+
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
@@ -12,8 +17,8 @@ const Footer = () => {
     };
 
     return(
-        <>
-            <div className='container'>
+        <div className="footer-container">
+            <div className="container">
                 <div className='row-1'>
                     <div >
                         <h2 className='stat-container-header'>JOIN OUR COMMUNITY!</h2>
@@ -56,14 +61,14 @@ const Footer = () => {
                             placeholder="Enter your first name"
                             required
                             />
-                            <button type="submit">Subscribe</button>
+                            <button className="suscribe-button" type="submit">Subscribe</button>
                         </form>
                     </div>
                 </div>
                 <div className='row-2'></div>
                 <div className='row-3'></div>
             </div>
-        </>
+        </div>
     )
 }
 
