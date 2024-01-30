@@ -11,11 +11,11 @@
     padding: 50px 50px;
     margin-bottom: 500px;
 }
-
+/* 
 .light-mode.footer-container {
     background-color: #fff9ed;
     color: var(--color-foreground);
-}
+} */
 
 .dark-mode.container {
     background-color: #EBC155;
@@ -25,7 +25,7 @@
 }
 
 
-.dark-mode.footer-container {
+/* .dark-mode.footer-container {
     background-color: #EBC155;
     color: var(--color-foreground);
-}
+} */

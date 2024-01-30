@@ -122,6 +122,7 @@ img {
 }
 
 .home-container-description-button:hover {
+    /* background-color: rgb(4, 154, 42); */
     text-decoration: underline;
 }
 
@@ -216,7 +217,12 @@ img {
 }
 
 .year {
-    margin: 2
+    /* margin: 2; */
+    /* lightmode needs these */
+    margin: 25px 0;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    color: rgb(4, 78, 23);
 }
     
 .video-container {
