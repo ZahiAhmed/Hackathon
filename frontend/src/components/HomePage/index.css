@@ -181,12 +181,10 @@ img {
     background-color: var(--color-background);
     /* Default background color */
     padding: 54px 0 54px 0;
+    background-color: #fff9ed;
 }
 
-.light-mode .stat-container {
-    background-color: #fff9ed;
-    /* Background color for light mode */
-}
+
 
 .stat-container-header {
     font-size: 44px;
@@ -202,6 +200,10 @@ img {
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 55px;
+}
+
+.dark .stat-container {
+    background-color: #c08230;
 }
 
 .stat-containers>div {
@@ -223,6 +225,15 @@ img {
     font-size: 20px;
     font-family: 'Franklin Gothic Medium', Arial, sans-serif;
     color: rgb(4, 78, 23);
+}
+
+
+.dark .year {
+    margin: 25px 0;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    color: rgb(4, 78, 23);
+    /* White color */
 }
     
 .video-container {

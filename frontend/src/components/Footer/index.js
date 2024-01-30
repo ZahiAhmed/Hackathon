@@ -1,11 +1,8 @@
 import './index.css'
 import Icon from '../../svg/icon.js'
 import { useState } from 'react';
-import { useColorScheme } from '../DarkModeToggle/useColorScheme.js';
 
 const Footer = () => {
-    const { isDark } = useColorScheme(); // Get the current color scheme
-
 
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
