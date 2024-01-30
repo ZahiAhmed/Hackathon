@@ -27,7 +27,7 @@ video {
     filter: grayscale(var(--image-grayscale)) opacity(var(--image-opacity));
 }
 
-p,
+/* p,
 a{
     animation: fade 3s linear both;
     animation-timeline: view();
@@ -44,20 +44,58 @@ a{
         opacity: 1;
         transform: translateY(0);
     }
-}
+} */
 
 .home-container {
-    position: relative;
     max-width: 100%;
+    width: 100%;
+    height: 100vh;
+    display: block;
+    margin: 0 auto;
     overflow: hidden;
+    position: relative;
 }
 
 img {
-    max-width: 100%;
     width: 100%;
-    max-height: 100vh;
-    display: block;
-    margin: 0 auto;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+    /* Adjust the transition duration and timing function */
+}
+
+.carousel-buttons {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    z-index: 2;
+}
+
+.carousel-button {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ddd;
+    margin: 0 5px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    padding: 0;
+    opacity: 0.5;
+    transition: background-color 0.5s ease, opacity 0.5s ease;
+}
+
+.carousel-button.active {
+    background-color: white;
+    opacity: 1;
 }
 
 .home-container-description {
@@ -128,7 +166,7 @@ img {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 60px 0 60px 0;
+    padding: 40px 0 60px 0;
 }
 
 .text-body-1-div {
