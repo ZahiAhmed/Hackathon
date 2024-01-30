@@ -17,7 +17,7 @@ body.dark {
 body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
     --image-grayscale: 0;
     --image-opacity: 100%;
 }
@@ -28,9 +28,7 @@ video {
 }
 
 p,
-a,
-h2,
-h3 {
+a{
     animation: fade 3s linear both;
     animation-timeline: view();
     animation-range: entry 70% cover 30%;
@@ -40,7 +38,6 @@ h3 {
     from {
         opacity: 0;
         transform: translateY(20px);
-        /* Initial position, adjust as needed */
     }
 
     to {
@@ -80,7 +77,7 @@ img {
     margin-bottom: 40px;
     font-weight: 900;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+
 
     @media screen and (max-width: 1725px) {
         font-size: 2.7em;
@@ -117,7 +114,7 @@ img {
     border-radius: 3px;
     font-weight: bold;
     text-align: center;
-    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    /* font-family: 'Franklin Gothic Medium', Arial, sans-serif; */
     font-style: italic;
 }
 
@@ -140,7 +137,6 @@ img {
 
 .text-body-1-p {
     font-size: 23px;
-    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
     line-height: 1.5;
     padding: 0 0 24px 0;
 }
@@ -149,7 +145,6 @@ img {
     position: relative;
     text-decoration: none;
     font-size: 23px;
-    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
     font-weight: 600;
     font-style: italic;
     padding-bottom: 5px;
@@ -179,7 +174,6 @@ img {
 .stat-container {
     text-align: center;
     background-color: var(--color-background);
-    /* Default background color */
     padding: 54px 0 54px 0;
     background-color: #fff9ed;
 }
@@ -189,7 +183,6 @@ img {
 .stat-container-header {
     font-size: 44px;
     font-weight: 900;
-    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
     font-style: italic;
     padding-bottom: 60px;
 }
@@ -215,7 +208,6 @@ img {
 .number {
     font-size: 70px;
     font-weight: 400;
-    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
 }
 
 .year {
@@ -223,7 +215,6 @@ img {
     /* lightmode needs these */
     margin: 25px 0;
     font-size: 20px;
-    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
     color: rgb(4, 78, 23);
 }
 
@@ -231,9 +222,23 @@ img {
 .dark .year {
     margin: 25px 0;
     font-size: 20px;
-    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
     color: rgb(96, 126, 103);
     /* White color */
+}
+
+@media (max-width: 1300px) {
+    .stat-containers {
+        max-width: 90%;
+        /* Adjust the max-width as needed */
+        flex-wrap: wrap;
+    }
+
+    .stat-containers>div {
+        width: 100%;
+        /* Make each item take full width on smaller screens */
+        margin-bottom: 20px;
+        /* Add some space between items */
+    }
 }
     
 .video-container {
