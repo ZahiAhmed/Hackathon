@@ -1,0 +1,74 @@
+.about-container {
+    max-width: 100%;
+    text-align: center;
+    font-style: italic;
+}
+
+h1 {
+    font-size: xx-large;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 2%;
+}
+
+h2 {
+    font-size: x-large;
+}
+
+h4 {
+    font-size:medium
+}
+
+.goal-container {
+    padding: 2%;
+    width: 50%;
+    margin: auto;
+}
+
+.goal-container > p {
+    margin-top: 10%;
+}
+
+.mission-container{
+    padding: 2%;
+}
+
+.mission-flex{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.mission-cards{
+    background-color: #3E2900;
+    width: 200px;
+    height: 200px
+}
+
+.mission-cards > h2, .mission-cards > p{
+    margin-top: 10%;
+}
+
+.ecosystem-container{
+    padding: 2%;
+    background-color: rgb(27, 62, 62);
+    height: 300px;
+}
+
+.ecosystem-container > p{
+    width: 50%;
+    margin: auto;
+}
+
+.more-container{
+    padding: 2%;
+}
+
+.more-flex{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.more-flex > p {
+    width: 200px;
+    height: 200px;
+}
