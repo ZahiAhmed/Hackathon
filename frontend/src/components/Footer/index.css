@@ -1,25 +1,88 @@
-.row-1{
-    max-width: 80%;
-    margin: auto;
-    display: flex;
-    justify-content: space-evenly;
+.row-1 {
+  max-width: 80%;
+  margin: auto;
+  padding: 50px 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.row-1-header {
+  font-size: 25px;
+  font-weight: bolder;
+  font-style: italic;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .container {
-    background-color: #fff9ed;
-    /* color: var(--color-foreground); */
-    padding: 50px 50px;
-    margin-bottom: 50px;
+  background-color: #fff9ed;
+  /* color: var(--color-foreground); */
+  /* padding: 50px 50px; */
+
 }
 
-
 .dark .container {
-    background-color: #2c261e;
-    color: var(--color-foreground);
-    padding: 50px 50px;
-    margin-bottom: 50px;
+  background-color: #2c261e;
+  color: var(--color-foreground);
+
 }
 
 .dark .suscribe-button {
-    color: var(--color-foreground);
+  color: var(--color-foreground);
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+/* Style when input is focused */
+input:focus {
+  border-color: #007bff; /* Change to your desired focus color */
+}
+
+/* Style for disabled input */
+input:disabled {
+  background-color: #f2f2f2;
+  color: #888888;
+  cursor: not-allowed;
+}
+
+/* Placeholder text color */
+::placeholder {
+  color: #888888;
+}
+
+button {
+  font-size: 1.2em;
+  display: inline-block;
+  padding: 13px 20px;
+  background-color: rgb(4, 78, 23);
+  color: white;
+  text-decoration: none;
+  border-radius: 3px;
+  font-weight: bold;
+  text-align: center;
+  font-style: italic;
+  opacity: 1;
+}
+
+@media screen and (max-width: 900px) {
+  .row-1 {
+    flex-direction: column; /* Change to column layout on smaller screens */
+    align-items: center; /* Center items vertically */
+  }
+}
+
+.row-3{
+    margin: auto;
+}
+.trademark{
+    color: black;
+    padding: 20px 20px;
 }

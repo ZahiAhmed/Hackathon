@@ -27,7 +27,7 @@ video {
     filter: grayscale(var(--image-grayscale)) opacity(var(--image-opacity));
 }
 
-/* p,
+p,
 a{
     animation: fade 3s linear both;
     animation-timeline: view();
@@ -44,8 +44,9 @@ a{
         opacity: 1;
         transform: translateY(0);
     }
-} */
+}
 
+/* CSS for the Index Page */
 .home-container {
     max-width: 100%;
     width: 100%;
@@ -65,7 +66,6 @@ img {
     left: 0;
     opacity: 1;
     transition: opacity 1s ease-in-out;
-    /* Adjust the transition duration and timing function */
 }
 
 .carousel-buttons {
@@ -152,15 +152,15 @@ img {
     border-radius: 3px;
     font-weight: bold;
     text-align: center;
-    /* font-family: 'Franklin Gothic Medium', Arial, sans-serif; */
     font-style: italic;
+    opacity: 1;
 }
 
 .home-container-description-button:hover {
-    /* background-color: rgb(4, 154, 42); */
     text-decoration: underline;
 }
 
+/* First Text Body for Index Page */
 .text-body-1 {
     display: flex;
     justify-content: center;
@@ -208,7 +208,7 @@ img {
     color: black;
 }
 
-
+/* Stats Div for Index Page */
 .stat-container {
     text-align: center;
     background-color: var(--color-background);
@@ -278,7 +278,8 @@ img {
         /* Add some space between items */
     }
 }
-    
+
+/* Video Div  */
 .video-container {
     background-color: rgb(4, 51, 16);
     display: flex;
@@ -292,7 +293,8 @@ img {
     justify-content: center;
     padding: 50px 50px;
 }
-    
+
+/* Newsletter Div */
 .newsletter-container {
     display: flex;
     justify-content: center;
