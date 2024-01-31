@@ -4,10 +4,11 @@ import HomePage from "./components/HomePage";
 import Footer from "./components/Footer";
 import DarkModeToggle from "./components/DarkModeToggle";
 import AboutPage from "./components/AboutPage"
-
+import NavLink from "./components/NavLink";
 function App() {
   return (
     <>
+    <NavLink></NavLink>
     <Switch>
       <Redirect exact from="/" to="/home" />
       <Route exact path="/home" component={HomePage} />
@@ -15,9 +16,7 @@ function App() {
       {/* Add other routes as needed */}
     </Switch>
     <Footer></Footer>
-    <DarkModeToggle />
     </>
-
   );
 }
 
