@@ -27,8 +27,7 @@ video {
     filter: grayscale(var(--image-grayscale)) opacity(var(--image-opacity));
 }
 
-p,
-a{
+p,h1,h2,h3{
     animation: fade 3s linear both;
     animation-timeline: view();
     animation-range: entry 70% cover 30%;

@@ -1,10 +1,10 @@
 import React from "react";
+import { useLanguage } from "../LanguageSwitcher/LanguageContext";
 
-const Texts = ({ language }) => {
+const Texts = () => {
+  const { selectedLanguage } = useLanguage();
   const getTextsForLanguage = () => {
-
-    switch (language) {
-
+    switch (selectedLanguage  ) {
       case "en":
         return {
           paragraph1:
@@ -12,7 +12,7 @@ const Texts = ({ language }) => {
           paragraph2: "Women are powerful agents of change.",
           linkText: "HOW WE DO IT >",
         };
-        
+
       case "es":
         return {
           paragraph1:

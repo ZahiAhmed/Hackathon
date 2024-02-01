@@ -1,23 +1,34 @@
+import React, { useEffect, useState } from "react";
 import "./index.css";
 import DarkModeToggle from "../DarkModeToggle";
+import LanguageSelector from "../LanguageSwitcher";
+import { useLanguage } from "../LanguageSwitcher/LanguageContext";
+
 const NavLink = () => {
+  const { selectedLanguage, changeLanguage } = useLanguage();
+
+  const handleLanguageChange = (language) => {
+    changeLanguage(language);
+  };
+
   return (
     <>
       <nav>
-        <ul class="nav-links">
-          <li class="link">
+        <ul className="nav-links">
+          <li className="link">
             <a href="#">Link 1</a>
           </li>
-          <li class="link">
+          <li className="link">
             <a href="#">Link 2</a>
           </li>
-          <li class="link">
+          <li className="link">
             <a href="#">Link 3</a>
           </li>
-          <DarkModeToggle></DarkModeToggle>
+          <DarkModeToggle />
+          <LanguageSelector onChange={handleLanguageChange} />
         </ul>
 
-        <button class="button">DONATE</button>
+        <button className="button">DONATE</button>
       </nav>
     </>
   );
