@@ -16,10 +16,10 @@ const NavLink = () => {
       <nav>
         <ul className="nav-links">
           <li className="link">
-            <a href="#">Link 1</a>
+            <a href="/home">Home</a>
           </li>
           <li className="link">
-            <a href="#">Link 2</a>
+            <a href="/about">About</a>
           </li>
           <li className="link">
             <a href="#">Link 3</a>
