@@ -15,6 +15,7 @@ const NavLink = () => {
     <>
       <nav>
         <ul className="nav-links">
+          <li>Prospect International</li>
           <li className="link">
             <a href="/home">Home</a>
           </li>
