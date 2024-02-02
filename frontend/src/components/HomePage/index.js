@@ -11,13 +11,15 @@ const HomePage = () => {
   
   const [textToSpeak, setTextToSpeak] = useState("");
   const [statToSpeak, setStatToSpeak] = useState("");
-  
+  const [isSpeaking, setIsSpeaking] = useState(false);
+
   const speechSynthesisRef = useRef(null); // Ref to hold the speech synthesis instance
 
   useEffect(() => {
     const speech = speechSynthesisRef.current;
     if (speech) {
       window.speechSynthesis.cancel(); // Cancel the speech synthesis
+      setIsSpeaking(false);
     }
   }, [selectedLanguage]);
 
@@ -27,6 +29,7 @@ const HomePage = () => {
       speech.lang = selectedLanguage === 'es' ? 'es-ES' : 'en-US';
       speechSynthesisRef.current = speech; // Store the speech synthesis instance in the ref
       window.speechSynthesis.speak(speech);
+      setIsSpeaking(true);
     }
   };
 
@@ -36,7 +39,14 @@ const HomePage = () => {
       speech.lang = selectedLanguage === 'es' ? 'es-ES' : 'en-US';
       speechSynthesisRef.current = speech; // Store the speech synthesis instance in the ref
       window.speechSynthesis.speak(speech);
+      setIsSpeaking(true);
     }
+  };
+
+  const handleStop = () => {
+    // Stop speech synthesis
+    window.speechSynthesis.cancel();
+    setIsSpeaking(false);
   };
 
   return (
@@ -44,9 +54,17 @@ const HomePage = () => {
       <Carousel />
       <Texts setTextToSpeak={setTextToSpeak}/>
       {/* <LanguageSelector onChange={handleLanguageChange} /> */}
-      <button onClick={handleSpeak}>Read Text</button>
+      {isSpeaking ? (
+        <button onClick={handleStop}>Stop</button> 
+      ) : (
+        <button onClick={handleSpeak}>Read Text</button>
+      )}
       <Stats setStatToSpeak={setStatToSpeak}/>
-      <button onClick={handleStatsSpeak}>Read Stats</button>
+      {isSpeaking ? (
+        <button onClick={handleStop}>Stop</button> 
+      ) : (
+        <button onClick={handleStatsSpeak}>Read Stats</button>
+      )}
       <Video />
       <div className="newsletter-container">
         <h2 className="stat-container-header">STAY CONNECTED!</h2>
