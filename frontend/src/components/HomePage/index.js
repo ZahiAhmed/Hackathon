@@ -11,7 +11,8 @@ const HomePage = () => {
   
   const [textToSpeak, setTextToSpeak] = useState("");
   const [statToSpeak, setStatToSpeak] = useState("");
-  const [isSpeaking, setIsSpeaking] = useState(false);
+  const [isTextSpeaking, setIsTextSpeaking] = useState(false);
+  const [isStatsSpeaking, setIsStatsSpeaking] = useState(false);
 
   const speechSynthesisRef = useRef(null); // Ref to hold the speech synthesis instance
 
@@ -19,7 +20,8 @@ const HomePage = () => {
     const speech = speechSynthesisRef.current;
     if (speech) {
       window.speechSynthesis.cancel(); // Cancel the speech synthesis
-      setIsSpeaking(false);
+      setIsTextSpeaking(false);
+      setIsStatsSpeaking(false);
     }
   }, [selectedLanguage]);
 
@@ -29,7 +31,7 @@ const HomePage = () => {
       speech.lang = selectedLanguage === 'es' ? 'es-ES' : 'en-US';
       speechSynthesisRef.current = speech; // Store the speech synthesis instance in the ref
       window.speechSynthesis.speak(speech);
-      setIsSpeaking(true);
+      setIsTextSpeaking(true);
     }
   };
 
@@ -39,14 +41,15 @@ const HomePage = () => {
       speech.lang = selectedLanguage === 'es' ? 'es-ES' : 'en-US';
       speechSynthesisRef.current = speech; // Store the speech synthesis instance in the ref
       window.speechSynthesis.speak(speech);
-      setIsSpeaking(true);
+      setIsStatsSpeaking(true);
     }
   };
 
   const handleStop = () => {
     // Stop speech synthesis
     window.speechSynthesis.cancel();
-    setIsSpeaking(false);
+    setIsTextSpeaking(false);
+    setIsStatsSpeaking(false);
   };
 
   return (
@@ -54,13 +57,13 @@ const HomePage = () => {
       <Carousel />
       <Texts setTextToSpeak={setTextToSpeak}/>
       {/* <LanguageSelector onChange={handleLanguageChange} /> */}
-      {isSpeaking ? (
+      {isTextSpeaking ? (
         <button onClick={handleStop}>Stop</button> 
       ) : (
         <button onClick={handleSpeak}>Read Text</button>
       )}
       <Stats setStatToSpeak={setStatToSpeak}/>
-      {isSpeaking ? (
+      {isStatsSpeaking ? (
         <button onClick={handleStop}>Stop</button> 
       ) : (
         <button onClick={handleStatsSpeak}>Read Stats</button>
