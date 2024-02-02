@@ -2,7 +2,7 @@ import React from "react";
 import { useLanguage } from "../LanguageSwitcher/LanguageContext";
 import NumberIncrementAnimation from "./numberAnimation";
 
-const Stats = () => {
+const Stats = ({ setStatToSpeak }) => {
   const { selectedLanguage } = useLanguage();
 
   const statsTexts = {
@@ -29,6 +29,17 @@ const Stats = () => {
         "DEL TOTAL DE PARTICIPANTES, ALCANZÓ LA SEGURIDAD ALIMENTARIA PARA ELLOS Y SU FAMILIA",
     },
   };
+
+    const generateStatsText = () => {
+      const statsContent = statsTexts[selectedLanguage];
+      const statsText = `${statsContent.header}. ${statsContent.livesReached}: 2.3 million. ${statsContent.participantsSince}: 465 million. ${statsContent.agencyAndDecisionMaking}: 82%. ${statsContent.savings}: 95%. ${statsContent.foodSecurity}: 82%.`;
+      return statsText;
+    };
+
+    React.useEffect(() => {
+      setStatToSpeak(generateStatsText());
+    }, [selectedLanguage, setStatToSpeak]);
+
 
   return (
     <>
