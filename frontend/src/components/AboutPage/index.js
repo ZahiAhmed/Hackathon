@@ -12,11 +12,9 @@ const AboutPage = () => {
   
   useEffect(() => {
     return () => {
-      console.log("AboutPage unmounted, stopping speech synthesis...");
       const speech = speechSynthesisRef.current;
       if (speech) {
         window.speechSynthesis.cancel(); // Cancel the speech synthesis
-        console.log("Speech synthesis stopped.");
       }
     };
   }, [selectedLanguage]);

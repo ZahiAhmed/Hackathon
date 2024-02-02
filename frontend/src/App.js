@@ -10,9 +10,7 @@ import { LanguageProvider } from "../src/components/LanguageSwitcher/LanguageCon
 function App() {
     useEffect(() => {
     const cleanupSpeechSynthesis = () => {
-      console.log("Cleaning up speech synthesis...");
       window.speechSynthesis.cancel();
-      console.log("Speech synthesis stopped.");
     };
 
     window.addEventListener('beforeunload', cleanupSpeechSynthesis);
