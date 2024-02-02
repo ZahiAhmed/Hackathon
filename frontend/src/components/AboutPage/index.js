@@ -6,7 +6,11 @@ const AboutPage = () => {
 
   // const [textToSpeak, setTextToSpeak] = useState("");
   const { selectedLanguage } = useLanguage();
-
+  const [isSpeaking, setIsSpeaking] = useState({
+    ourgoal: false,
+    ecosystem: false,
+    moreAboutUs: false
+  });
 
   const speechSynthesisRef = useRef(null); // Ref to hold the speech synthesis instance
   
@@ -15,18 +19,30 @@ const AboutPage = () => {
       const speech = speechSynthesisRef.current;
       if (speech) {
         window.speechSynthesis.cancel(); // Cancel the speech synthesis
+        setIsSpeaking({
+          ourgoal: false,
+          ecosystem: false,
+          moreAboutUs: false
+        });
       }
     };
   }, [selectedLanguage]);
   
   
-    const handleSpeak = (text) => {
+    const handleSpeak = (text, section) => {
       if (text) {
         const speech = new SpeechSynthesisUtterance(text);
         speechSynthesisRef.current = speech; // Store the speech synthesis instance in the ref
         window.speechSynthesis.speak(speech);
+        setIsSpeaking(prevState => ({ ...prevState, [section]: true })); 
       }
     };
+
+  const handleStop = (section) => {
+    window.speechSynthesis.cancel(); // Cancel the speech synthesis
+    setIsSpeaking(prevState => ({ ...prevState, [section]: false })); // Set speaking state of the specific section to false
+  };
+
 
   const content = {
     ourgoal: "Our goal. Five million people. When we target women as primary members of their households, we know they’ll reinvest in their families, communities and futures. For each woman with whom we partner, we reach a total of five people in the community. OUR MISSION. OUR VISION: A world free from extreme poverty. HOW WE DO IT: We partner with women in extreme poverty to build economic opportunity and drive inclusion. OUR VALUES: Respect, Collaboration, Commitment.",
@@ -69,7 +85,11 @@ const AboutPage = () => {
             <p>Commitment</p>
           </div>
         </div>
-        <button onClick={() => handleSpeak(content.ourgoal)}>Read Goals and Mission</button>
+        {!isSpeaking.ourgoal ? (
+          <button onClick={() => handleSpeak(content.ourgoal, 'ourgoal')}>Read Goals and Mission</button>
+        ) : (
+          <button onClick={() => handleStop('ourgoal')}>Stop</button>
+        )}
       </div>
 
       <div className="ecosystem-container">
@@ -82,7 +102,11 @@ const AboutPage = () => {
           We work with incredible partners at different levels to support women
           forging pathways out of poverty.
         </p>
-        <button onClick={() => handleSpeak(content.ecosystem)}>Read Ecosystem</button>
+        {!isSpeaking.ecosystem ? (
+          <button onClick={() => handleSpeak(content.ecosystem, 'ecosystem')}>Read Ecosystem</button>
+        ) : (
+          <button onClick={() => handleStop('ecosystem')}>Stop</button>
+        )}
       </div>
       <div className="more-container">
         <h1>MORE ABOUT US</h1>
@@ -99,7 +123,11 @@ const AboutPage = () => {
             to the communities we serve.
           </p>
         </div>
-        <button onClick={() => handleSpeak(content.moreAboutUs)}>Read More About Us</button>
+        {!isSpeaking.moreAboutUs ? (
+          <button onClick={() => handleSpeak(content.moreAboutUs, 'moreAboutUs')}>Read More About Us</button>
+        ) : (
+          <button onClick={() => handleStop('moreAboutUs')}>Stop</button>
+        )}
       </div>
     </div>
   );
