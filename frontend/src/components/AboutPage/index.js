@@ -1,15 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { useLanguage } from "../LanguageSwitcher/LanguageContext"; 
 import "./index.css";
 
 const AboutPage = () => {
-  const [textToSpeak, setTextToSpeak] = useState("");
 
-  const handleSpeak = (text) => {
-    if (text) {
-      const speech = new SpeechSynthesisUtterance(text);
-      window.speechSynthesis.speak(speech);
-    }
-  };
+  // const [textToSpeak, setTextToSpeak] = useState("");
+  const { selectedLanguage } = useLanguage();
+
+
+  const speechSynthesisRef = useRef(null); // Ref to hold the speech synthesis instance
+  
+  useEffect(() => {
+    return () => {
+      console.log("AboutPage unmounted, stopping speech synthesis...");
+      const speech = speechSynthesisRef.current;
+      if (speech) {
+        window.speechSynthesis.cancel(); // Cancel the speech synthesis
+        console.log("Speech synthesis stopped.");
+      }
+    };
+  }, [selectedLanguage]);
+  
+  
+    const handleSpeak = (text) => {
+      if (text) {
+        const speech = new SpeechSynthesisUtterance(text);
+        speechSynthesisRef.current = speech; // Store the speech synthesis instance in the ref
+        window.speechSynthesis.speak(speech);
+      }
+    };
 
   const content = {
     ourgoal: "Our goal. Five million people. When we target women as primary members of their households, we know they’ll reinvest in their families, communities and futures. For each woman with whom we partner, we reach a total of five people in the community. OUR MISSION. OUR VISION: A world free from extreme poverty. HOW WE DO IT: We partner with women in extreme poverty to build economic opportunity and drive inclusion. OUR VALUES: Respect, Collaboration, Commitment.",

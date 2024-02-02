@@ -15,14 +15,9 @@ const HomePage = () => {
   const speechSynthesisRef = useRef(null); // Ref to hold the speech synthesis instance
 
   useEffect(() => {
-    console.log("Language changed, stopping speech synthesis...");
     const speech = speechSynthesisRef.current;
     if (speech) {
-      console.log("Speech object exists in ref.");
-      speechSynthesis.cancel(); // Cancel the speech synthesis
-      console.log("Speech synthesis stopped.");
-    } else {
-      console.log("Speech object does not exist in ref.");
+      window.speechSynthesis.cancel(); // Cancel the speech synthesis
     }
   }, [selectedLanguage]);
 
