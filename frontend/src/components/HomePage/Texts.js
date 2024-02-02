@@ -1,7 +1,7 @@
 import React from "react";
 import { useLanguage } from "../LanguageSwitcher/LanguageContext";
 
-const Texts = () => {
+const Texts = ( {setTextToSpeak} ) => {
   const { selectedLanguage } = useLanguage();
   const getTextsForLanguage = () => {
     switch (selectedLanguage  ) {
@@ -32,6 +32,10 @@ const Texts = () => {
   };
 
   const { paragraph1, paragraph2, linkText } = getTextsForLanguage();
+
+  React.useEffect(() => {
+    setTextToSpeak(`${paragraph1} ${paragraph2}`);
+  }, [paragraph1, paragraph2, setTextToSpeak])
 
   return (
     <div className="text-body-1">
