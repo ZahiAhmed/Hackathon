@@ -30,7 +30,7 @@ const LanguageSelector = ({ onChange }) => {
 
   return (
     <div className="language-selector">
-      <label htmlFor="language-select">Select Language:</label>
+      <label htmlFor="language-select"></label>
       <select
         id="language-select"
         onChange={handleLanguageChange}

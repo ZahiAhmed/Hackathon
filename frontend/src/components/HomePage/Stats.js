@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useLanguage } from "../LanguageSwitcher/LanguageContext";
 import NumberIncrementAnimation from "./numberAnimation";
 
-const Stats = ({ setStatToSpeak }) => {
+const Stats = () => {
   const { selectedLanguage } = useLanguage();
+  const [statToSpeak, setStatToSpeak] = useState("");
 
   const statsTexts = {
     en: {
@@ -30,30 +31,38 @@ const Stats = ({ setStatToSpeak }) => {
     },
   };
 
-    const generateStatsText = () => {
-      const statsContent = statsTexts[selectedLanguage];
-      const statsText = `${statsContent.header}. ${statsContent.livesReached}: 2.3 million. ${statsContent.participantsSince}: 465 million. ${statsContent.agencyAndDecisionMaking}: 82%. ${statsContent.savings}: 95%. ${statsContent.foodSecurity}: 82%.`;
-      return statsText;
-    };
+  const generateStatsText = () => {
+    const statsContent = statsTexts[selectedLanguage];
+    const statsText = `${statsContent.header}. ${statsContent.livesReached}: 2.3 million. ${statsContent.participantsSince}: 465 million. ${statsContent.agencyAndDecisionMaking}: 82%. ${statsContent.savings}: 95%. ${statsContent.foodSecurity}: 82%.`;
+    return statsText;
+  };
 
-    React.useEffect(() => {
-      setStatToSpeak(generateStatsText());
-    }, [selectedLanguage, setStatToSpeak]);
+  const handleStatsSpeak = () => {
+    // Speak the stats text
+    if (statToSpeak) {
+      const speech = new SpeechSynthesisUtterance(statToSpeak);
+      window.speechSynthesis.speak(speech);
+    }
+  };
 
+  React.useEffect(() => {
+    setStatToSpeak(generateStatsText());
+  }, [selectedLanguage, setStatToSpeak]);
 
   return (
     <>
-      <div className="stat-container">
-        <div className="stat-container-header">
-          <h2>{statsTexts[selectedLanguage].header}</h2>
+      <div className="section4">
+        <div>
+          <h1 className="header">{statsTexts[selectedLanguage].header}</h1>
         </div>
-        <div className="stat-containers">
+
+        <div className="row">
           <div>
             <p className="number">
               <NumberIncrementAnimation targetNumber={2.3} duration={700} />
               <span> M</span>
             </p>
-            <h3 className="year">
+            <h3 className="mini-text">
               {statsTexts[selectedLanguage].livesReached}
             </h3>
           </div>
@@ -62,18 +71,19 @@ const Stats = ({ setStatToSpeak }) => {
               <NumberIncrementAnimation targetNumber={465} duration={1000} />
               <span> M</span>
             </p>
-            <h3 className="year">
+            <h3 className="mini-text">
               {statsTexts[selectedLanguage].participantsSince}
             </h3>
           </div>
         </div>
-        <div className="stat-containers">
+
+        <div className="row">
           <div>
             <p className="number">
               <NumberIncrementAnimation targetNumber={82} duration={1000} />
               <span>%</span>
             </p>
-            <h3 className="year">
+            <h3 className="mini-text">
               {statsTexts[selectedLanguage].agencyAndDecisionMaking}
             </h3>
           </div>
@@ -82,17 +92,22 @@ const Stats = ({ setStatToSpeak }) => {
               <NumberIncrementAnimation targetNumber={95} duration={1000} />
               <span>%</span>
             </p>
-            <h3 className="year">{statsTexts[selectedLanguage].savings}</h3>
+            <h3 className="mini-text">
+              {statsTexts[selectedLanguage].savings}
+            </h3>
           </div>
           <div>
             <p className="number">
               <NumberIncrementAnimation targetNumber={82} duration={1000} />
               <span>%</span>
             </p>
-            <h3 className="year">
+            <h3 className="mini-text">
               {statsTexts[selectedLanguage].foodSecurity}
             </h3>
           </div>
+        </div>
+        <div className="speak-button">
+          <button onClick={handleStatsSpeak}>Read Text</button>
         </div>
       </div>
     </>

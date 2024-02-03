@@ -1,7 +1,6 @@
 .row-1 {
   max-width: 80%;
   margin: auto;
-  padding: 50px 0;
   display: flex;
   justify-content: space-evenly;
 }
@@ -14,18 +13,18 @@
   margin-top: 20px;
 }
 
-.container {
-  background-color: #fff9ed;
-  /* color: var(--color-foreground); */
-  /* padding: 50px 50px; */
+.footer-container {
+  background-color: #878282;
+  color: var(--color-foreground);
+  padding: 15px 10px;
 
 }
 
-.dark .container {
+/* .dark .footer-container {
   background-color: #2c261e;
   color: var(--color-foreground);
 
-}
+} */
 
 .dark .suscribe-button {
   color: var(--color-foreground);
@@ -58,19 +57,19 @@ input:disabled {
   color: #888888;
 }
 
-button {
+/* button {
   font-size: 1.2em;
   display: inline-block;
-  padding: 13px 20px;
-  background-color: rgb(4, 78, 23);
-  color: white;
+  padding: 13px 20px; 
+  background-color: rgb(191, 255, 188);
+  color: gray;
   text-decoration: none;
   border-radius: 3px;
   font-weight: bold;
   text-align: center;
   font-style: italic;
   opacity: 1;
-}
+} */
 
 @media screen and (max-width: 900px) {
   .row-1 {
@@ -83,6 +82,5 @@ button {
     margin: auto;
 }
 .trademark{
-    color: black;
     padding: 20px 20px;
 }

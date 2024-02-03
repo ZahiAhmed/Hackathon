@@ -37,7 +37,7 @@ const Carousel = () => {
 
   return (
     <>
-      <div className="home-container">
+      <div className="section2">
         {carouselImages.map((image, index) => (
           <img
             key={index}
@@ -55,11 +55,11 @@ const Carousel = () => {
             }}
           />
         ))}
-        <div className="home-container-description">
-          <h1 className="home-container-description-text">
+        <div className="description">
+          <h1>
             {carouselDescriptions[selectedLanguage]}
           </h1>
-          <a className="home-container-description-button" href="#">
+          <a className="button" href="#">
             {donateButtonTexts[selectedLanguage]}
           </a>
         </div>

@@ -4,8 +4,8 @@ import Subscribe from "./Subcribe";
 const Footer = () => {
 
   return (
-    <div className="footer-container">
-      <div className="container">
+    <div className="section5">
+      <div className="footer-container">
         <div className="row-1">
           <div>
             <h2 className="row-1-header">JOIN OUR COMMUNITY!</h2>

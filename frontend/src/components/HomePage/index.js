@@ -30,16 +30,12 @@ const HomePage = () => {
   return (
     <div>
       <Carousel />
-      <Texts setTextToSpeak={setTextToSpeak}/>
+      <Texts setTextToSpeak={setTextToSpeak} />
       {/* <LanguageSelector onChange={handleLanguageChange} /> */}
-      <button onClick={handleSpeak}>Read Text</button>
-      <Stats setStatToSpeak={setStatToSpeak}/>
-      <button onClick={handleStatsSpeak}>Read Stats</button>
+
+      <Stats setStatToSpeak={setStatToSpeak} />
+      {/* <button onClick={handleStatsSpeak}>Read Stats</button> */}
       <Video />
-      <div className="newsletter-container">
-        <h2 className="stat-container-header">STAY CONNECTED!</h2>
-        <a className="text-body-1-a">JOIN OUR NEWSLETTER {`>`}</a>
-      </div>
     </div>
   );
 };

@@ -13,24 +13,32 @@ const NavLink = () => {
 
   return (
     <>
-      <nav>
-        <ul className="nav-links">
-          <li>Prospect International</li>
-          <li className="link">
-            <a href="/home">Home</a>
-          </li>
-          <li className="link">
-            <a href="/about">About</a>
-          </li>
-          <li className="link">
-            <a href="#">Link 3</a>
-          </li>
-          <DarkModeToggle />
-          <LanguageSelector onChange={handleLanguageChange} />
-        </ul>
+      <div className="section1">
+        <nav className="nav-container">
+          <div className="logo">
+            {/* <LanguageSelector onChange={handleLanguageChange} /> */}
+            <p>Prospect International</p>
+          </div>
 
-        <button className="button">DONATE</button>
-      </nav>
+          <div className="navlink">
+            <ul>
+              <li className="link">
+                <a href="/home">Home</a>
+              </li>
+              <li className="link">
+                <a href="/about">About</a>
+              </li>
+              <li className="link">
+                <a href="#">Link 3</a>
+              </li>
+              <DarkModeToggle />
+              <a className="nav-button" href="#">
+                Donate
+              </a>
+            </ul>
+          </div>
+        </nav>
+      </div>
     </>
   );
 };

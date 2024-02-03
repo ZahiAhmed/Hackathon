@@ -1,1 +1,91 @@
 /* TODO Add site wide styles */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/* body.dark {
+  --color-background: #1f2023;
+  --color-foreground: #efefef;
+  --image-grayscale: 50%;
+  --image-opacity: 90%;
+} */
+
+body {
+  background-color: white;
+  color: var(--color-foreground);
+  font-family: "Roboto", sans-serif;
+  --image-grayscale: 0;
+  --image-opacity: 100%;
+  color: black;
+}
+
+img,
+video {
+  filter: grayscale(var(--image-grayscale)) opacity(var(--image-opacity));
+}
+
+/* p,
+h1,
+h2,
+h3, video {
+  animation: fade 3s linear both;
+  animation-timeline: view();
+  animation-range: entry 70% cover 30%;
+} */
+
+/* @keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} */
+
+h1,h2,h3,h4{
+    color: #66CC00;
+}
+
+button {
+  font-size: 1.2em;
+  display: inline-block;
+  padding: 13px 20px;
+  background-color: #66CC00;
+  color: #383838; /* Set the text color */
+  text-decoration: none;
+  border-radius: 3px;
+  font-weight: bold;
+  text-align: center;
+  color: #383838;
+}
+
+a{
+  color: black;
+}
+
+body.dark {
+  --color-background: #1f2023;
+  --color-foreground: #efefef;
+  --image-grayscale: 50%;
+  --image-opacity: 90%;
+}
+
+body.dark img,
+body.dark video {
+  filter: grayscale(var(--image-grayscale)) opacity(var(--image-opacity));
+}
+
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4 {
+  color: #BAFF39; /* Your highlight color */
+}
+
+
+body.dark {
+  background-color: #2c2c2c; /* Dark background color for the body */
+  color: var(--color-foreground);
+}

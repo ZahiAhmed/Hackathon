@@ -1,33 +1,40 @@
-nav {
-  max-width: 100%;
-  margin: auto;
-  padding: .5rem 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: end;
-  gap: 5rem;
-  background-color: rgb(4, 51, 16);
-  position: fixed;
+.nav-container {
   width: 100%;
-  z-index: 1000;
-  top: 0;
+  margin: auto;
 }
 
-.nav-logo {
-  max-width: 100px;
-}
-
-.nav-links {
-  list-style: none;
+.section1 nav {
   display: flex;
   align-items: center;
-  gap: 5rem;
+  justify-content: space-between;
+  padding: 14px;
 }
 
+.section1 .logo{
+  display: flex;
+  
+}
+
+.section1 nav .navlink ul{
+  display: flex;
+  align-items: center;
+}
+
+.section1 nav .navlink li{
+  margin: 0 10px;
+}
+
+.section1 nav .navlink a{
+  font-weight: 500;
+  font-size: 17px;
+  text-decoration: none;
+}
+
+/* Animation when hover link */
 .link a {
   position: relative;
-  padding-bottom: 0.75rem;
-  color: #fff;
+  padding-bottom: 5px;
+  color: black;
 }
 
 .link a::after {
@@ -37,7 +44,7 @@ nav {
   width: 0;
   bottom: 0;
   left: 0;
-  background-color: #1d4ed8;
+  background-color: #BAFF39;
   transition: all 0.3s ease;
 }
 
@@ -45,16 +52,35 @@ nav {
   width: 85%;
 }
 
-.button {
-  padding: 1rem 2rem;
-  font-size: 1rem;
-  color: #fff;
-  background-color: #1d4ed8;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+.section1 nav .navlink * {
+  margin-right: 10px;
+}
+.section1 {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, .5); /* Adjust the values as needed */
+
 }
 
-.button:hover {
-  background-color: #1e40af;
+.nav-button {
+    font-size: 1.2em;
+    display: inline-block;
+    padding: 13px 20px;
+    background-color: #BAFF39;
+    color: #383838; /* Set the text color */
+    text-decoration: none;
+    border-radius: 3px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.dark .section1{
+  background-color: #383838;
+}
+
+.dark .section1 nav .navlink li a{
+  color: white;
 }

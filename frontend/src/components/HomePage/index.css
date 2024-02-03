@@ -1,303 +1,257 @@
-/* :root {
-    --color-background: #fafafa;
-    --color-foreground: #1f2023;
-
-    --image-grayscale: 0;
-    --image-opacity: 100%;
-} */
-
-body.dark {
-    --color-background: #1f2023;
-    --color-foreground: #efefef;
-
-    --image-grayscale: 50%;
-    --image-opacity: 90%;
-}
-
-body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
-    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
-    --image-grayscale: 0;
-    --image-opacity: 100%;
-}
-
-img,
-video {
-    filter: grayscale(var(--image-grayscale)) opacity(var(--image-opacity));
-}
-
-p,h1,h2,h3{
-    animation: fade 3s linear both;
-    animation-timeline: view();
-    animation-range: entry 70% cover 30%;
-}
-
-@keyframes fade {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* CSS for the Index Page */
-.home-container {
-    max-width: 100%;
-    width: 100%;
-    height: 100vh;
-    display: block;
-    margin: 0 auto;
-    overflow: hidden;
-    position: relative;
+/* CSS for the Section 2 */
+.section2 {
+  max-width: 100%;
+  width: 100%;
+  height: 70vh;
+  display: block;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
 }
 
 img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 1;
-    transition: opacity 1s ease-in-out;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  transition: opacity 1s ease-in-out;
+  filter: brightness(100%);
 }
 
 .carousel-buttons {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    z-index: 2;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  z-index: 2;
 }
 
 .carousel-button {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #ddd;
-    margin: 0 5px;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    padding: 0;
-    opacity: 0.5;
-    transition: background-color 0.5s ease, opacity 0.5s ease;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ddd;
+  margin: 0 5px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 0;
+  opacity: 0.5;
+  transition: background-color 0.5s ease, opacity 0.5s ease;
 }
 
 .carousel-button.active {
-    background-color: white;
-    opacity: 1;
+  background-color: white;
+  opacity: 1;
 }
 
-.home-container-description {
-    max-width: 50%;
-    position: absolute;
-    letter-spacing: 2px;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    z-index: 1;
+.section2 .description {
+  max-width: 50%;
+  position: absolute;
+  letter-spacing: 2px;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  z-index: 1;
 }
 
-.home-container-description h1 {
-    font-size: 3.5em;
-    text-shadow: 4px 4px 8px rgba(4, 78, 23, 1);
-    margin-bottom: 40px;
-    font-weight: 900;
-    font-style: italic;
+.section2 .description h1 {
+  font-size: 2.9em;
+  text-shadow: 4px 4px 8px rgb(47, 51, 61);
+  margin-bottom: 40px;
+  font-weight: 900;
+  font-style: italic;
+  color: white;
 
+  @media screen and (max-width: 1725px) {
+    font-size: 2.5em;
+  }
 
-    @media screen and (max-width: 1725px) {
-        font-size: 2.7em;
-    }
+  @media screen and (max-width: 1465px) {
+    font-size: 2.3em;
+  }
 
-    @media screen and (max-width: 1325px) {
-        font-size: 2.3em;
-    }
+  @media screen and (max-width: 1360px) {
+    font-size: 2em;
+  }
 
-    @media screen and (max-width: 1170px) {
-        font-size: 2.0em;
-    }
+  @media screen and (max-width: 1195px) {
+    font-size: 1.8em;
+  }
 
-    @media screen and (max-width: 1070px) {
-        font-size: 1.8em;
-    }
+  @media screen and (max-width: 1085px) {
+    font-size: 1.5em;
+  }
 
-    @media screen and (max-width: 930px) {
-        font-size: 1.5em;
-    }
+  @media screen and (max-width: 920px) {
+    font-size: 1.3em;
+  }
 
-    @media screen and (max-width: 840px) {
-        font-size: 1.3em;
-    }
-}
-
-.home-container-description-button {
+  @media screen and (max-width: 810px) {
     font-size: 1.2em;
-    display: inline-block;
-    padding: 13px 20px;
-    background-color: rgb(4, 78, 23);
+  }
+}
+
+.section2 .button {
+  font-size: 1.2em;
+  display: inline-block;
+  padding: 13px 20px;
+  background-color: #baff39;
+  color: #383838; /* Set the text color */
+  text-decoration: none;
+  border-radius: 3px;
+  /* font-weight: bold; */
+  text-align: center;
+}
+
+.section2 .button:hover {
+  text-decoration: underline;
+}
+
+/* CSS For Section 3*/
+.section3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.section3 .text {
+  max-width: 50%;
+}
+
+.section3-p {
+  font-size: 23px;
+  line-height: 1.5;
+  padding: 0 0 24px 0;
+}
+
+.section3-a {
+  position: relative;
+  text-decoration: none;
+  font-size: 23px;
+  font-weight: 600;
+  font-style: italic;
+  color: black;
+}
+
+.dark .section3-a{
     color: white;
-    text-decoration: none;
-    border-radius: 3px;
-    font-weight: bold;
-    text-align: center;
-    font-style: italic;
-    opacity: 1;
 }
 
-.home-container-description-button:hover {
-    text-decoration: underline;
+.section3-a::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 0;
+  background-color: #baff39;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease;
 }
 
-/* First Text Body for Index Page */
-.text-body-1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 40px 0 60px 0;
+.section3-a:hover::after {
+  width: 90%;
 }
 
-.text-body-1-div {
-    max-width: 51%;
+.speak-button {
+  padding-top: 15px;
 }
 
-.text-body-1-p {
-    font-size: 23px;
-    line-height: 1.5;
-    padding: 0 0 24px 0;
+/* Section 4 CSS*/
+.section4 {
+  text-align: center;
+  padding: 54px 0;
+  background-color: #6e6e6e;
 }
 
-.text-body-1-a {
-    position: relative;
-    text-decoration: none;
-    font-size: 23px;
-    font-weight: 600;
-    font-style: italic;
-    padding-bottom: 5px;
+.header {
+  font-size: 48px;
+  font-weight: 900;
+  font-style: italic;
+  padding-bottom: 60px;
 }
 
-.text-body-1-a::after {
-    content: "";
-    display: block;
-    height: 4px;
-    width: 0;
-    background-color: rgb(4, 78, 23);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transition: width 0.3s ease;
+.row {
+  max-width: 55%;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 55px;
 }
 
-.text-body-1-a:hover::after {
-    width: 90%;
+.dark .section4 {
+  /* background-color: #2c261e; */
 }
 
-.text-body-1-a:visited {
-    color: black;
-}
-
-/* Stats Div for Index Page */
-.stat-container {
-    text-align: center;
-    background-color: var(--color-background);
-    padding: 54px 0 54px 0;
-    background-color: #fff9ed;
-}
-
-
-
-.stat-container-header {
-    font-size: 44px;
-    font-weight: 900;
-    font-style: italic;
-    padding-bottom: 60px;
-}
-
-.stat-containers {
-    max-width: 55%;
-    margin: auto;
-    display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 55px;
-}
-
-.dark .stat-container {
-    background-color: #2c261e;
-}
-
-.stat-containers>div {
-    text-align: center;
-    max-width: 300px;
-    margin: 0 auto;
+.row > div {
+  text-align: center;
+  max-width: 300px;
+  margin: 0 auto;
 }
 
 .number {
-    font-size: 70px;
-    font-weight: 400;
+  font-size: 70px;
+  font-weight: 400;
+  color: white;
 }
 
-.year {
-    /* margin: 2; */
-    /* lightmode needs these */
+.mini-text {
+  /* margin: 2; */
+  /* lightmode needs these */
+  margin: 25px 0;
+  font-size: 20px;
+}
+
+/* .dark .mini-text {   
     margin: 25px 0;
     font-size: 20px;
-    color: rgb(4, 78, 23);
-}
-
-
-.dark .year {
-    margin: 25px 0;
-    font-size: 20px;
-    color: rgb(96, 126, 103);
-    /* White color */
-}
+    color: rgb(37, 84, 215);
+} */
 
 @media (max-width: 1300px) {
-    .stat-containers {
-        max-width: 90%;
-        /* Adjust the max-width as needed */
-        flex-wrap: wrap;
-    }
+  .row {
+    max-width: 90%;
+    /* Adjust the max-width as needed */
+    flex-wrap: wrap;
+  }
 
-    .stat-containers>div {
-        width: 100%;
-        /* Make each item take full width on smaller screens */
-        margin-bottom: 20px;
-        /* Add some space between items */
-    }
+  .row > div {
+    width: 100%;
+    /* Make each item take full width on smaller screens */
+    margin-bottom: 20px;
+    /* Add some space between items */
+  }
 }
 
 /* Video Div  */
 .video-container {
-    background-color: rgb(4, 51, 16);
-    display: flex;
-    justify-content: center;
-    padding: 50px 50px;
+  /* background-color: rgb(37,47,64); */
+  display: flex;
+  justify-content: center;
+  padding: 50px 50px;
 }
 
 .dark .video-container {
-    background-color: rgb(4, 34, 11);
-    display: flex;
-    justify-content: center;
-    padding: 50px 50px;
+  /* background-color: rgb(4, 34, 11); */
+  display: flex;
+  justify-content: center;
+  padding: 50px 50px;
 }
 
 /* Newsletter Div */
+
+
 .newsletter-container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding: 50px 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 50px;
 }

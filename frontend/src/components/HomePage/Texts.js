@@ -1,7 +1,18 @@
-import React from "react";
+
+import React, { useState, useEffect } from "react";
 import { useLanguage } from "../LanguageSwitcher/LanguageContext";
 
-const Texts = ( {setTextToSpeak} ) => {
+const Texts = ( ) => {
+
+    const [textToSpeak, setTextToSpeak] = useState("");
+
+    const handleSpeak = () => {
+      if (textToSpeak) {
+        const speech = new SpeechSynthesisUtterance(textToSpeak);
+        window.speechSynthesis.speak(speech);
+      }
+    };
+
   const { selectedLanguage } = useLanguage();
   const getTextsForLanguage = () => {
     switch (selectedLanguage  ) {
@@ -38,13 +49,16 @@ const Texts = ( {setTextToSpeak} ) => {
   }, [paragraph1, paragraph2, setTextToSpeak])
 
   return (
-    <div className="text-body-1">
-      <div className="text-body-1-div">
-        <p className="text-body-1-p">{paragraph1}</p>
-        <p className="text-body-1-p">{paragraph2}</p>
-        <a className="text-body-1-a" href="#">
+    <div className="section3">
+      <div className="text">
+        <p className="section3-p">{paragraph1}</p>
+        <p className="section3-p">{paragraph2}</p>
+        <a className="section3-a" href="#">
           {linkText}
         </a>
+        <div className="speak-button">
+          <button onClick={handleSpeak}>Read Text</button>
+        </div>
       </div>
     </div>
   );
