@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import Footer from "./components/Footer";
@@ -8,6 +8,19 @@ import NavLink from "./components/NavLink";
 import { LanguageProvider } from "../src/components/LanguageSwitcher/LanguageContext";
 
 function App() {
+    useEffect(() => {
+    const cleanupSpeechSynthesis = () => {
+      window.speechSynthesis.cancel();
+    };
+
+    window.addEventListener('beforeunload', cleanupSpeechSynthesis);
+
+    return () => {
+      window.removeEventListener('beforeunload', cleanupSpeechSynthesis);
+      cleanupSpeechSynthesis();
+    };
+  }, []);
+
   return (
     <LanguageProvider>
       <>
