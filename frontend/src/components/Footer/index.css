@@ -14,21 +14,17 @@
 }
 
 .footer-container {
-  background-color: #878282;
+  background-color: gray;
   color: var(--color-foreground);
   padding: 15px 10px;
 
 }
 
-/* .dark .footer-container {
-  background-color: #2c261e;
-  color: var(--color-foreground);
-
-} */
-
-.dark .suscribe-button {
+.dark .footer-container {
+  background-color: #383838;
   color: var(--color-foreground);
 }
+
 
 input {
   width: 100%;

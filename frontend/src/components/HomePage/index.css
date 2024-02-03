@@ -2,7 +2,7 @@
 .section2 {
   max-width: 100%;
   width: 100%;
-  height: 70vh;
+  height: 100vh;
   display: block;
   margin: 0 auto;
   overflow: hidden;
@@ -15,7 +15,6 @@ img {
   object-fit: cover;
   position: absolute;
   transition: opacity 1s ease-in-out;
-  filter: brightness(100%);
 }
 
 .carousel-buttons {
