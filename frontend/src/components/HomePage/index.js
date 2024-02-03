@@ -7,6 +7,7 @@ import { useLanguage } from "../LanguageSwitcher/LanguageContext";
 import "./index.css";
 
 const HomePage = () => {
+  
   const { selectedLanguage } = useLanguage();
   
   const [textToSpeak, setTextToSpeak] = useState("");
